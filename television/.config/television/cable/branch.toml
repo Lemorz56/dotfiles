@@ -1,0 +1,12 @@
+[metadata]
+name = "branch"
+description = "A channel to select from Git branches"
+requirements = ["git"]
+
+[source]
+command = "git branch --format='%(refname:short)'"
+# output = "{split: :-1}"
+output = "git switch {split: :-1}"
+
+[preview]
+command = "git log -1 --pretty=format:'%C(yellow)%h%Creset - %s %C(green)(%cr) %C(bold blue)<%an>%Creset' '{split: :-1}'"

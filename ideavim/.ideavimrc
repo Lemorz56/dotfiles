@@ -1,0 +1,115 @@
+:set relativenumber
+:set number 
+" status bar
+set showmode
+
+set scrolloff=5
+set history=1000
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+imap jk <Esc>
+let mapleader=" "
+
+" find and replace
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+clipboard+=unnamed
+map <Space> <Nop>
+map <space> <nop>
+
+" better HJKL
+map H ^
+map L $
+map J }
+map K {
+
+" location
+nmap <C-i> <Action>(Forward)
+nmap <C-o> <Action>(Back)
+nmap <C-l> :action NextTab<CR>
+nmap <C-h> :action PreviousTab<CR>
+" better escape
+imap jk <Esc>
+
+set quickscope
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+
+"Plug 'justinmk/vim-sneak'
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+
+set which-key
+set notimeout
+let g:WhichKey_FontSize = 16
+Plug 'terryma/vim-multiple-cursors'
+set easymotion
+set notimeout
+
+" continuous shift
+xnoremap < <gv
+xnoremap > >gv
+" clear search highlighting
+nmap <leader>cc :nohls<return><esc>
+
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>f :action GotoFile<CR>
+nmap <leader>a :action FindInPath<CR>
+nmap <leader>c <Action>(CloseContent)
+
+nunmap K
+nnoremap gk <Action>(ShowHoverInfo)
+" nnoremap ge<Action>(ShowErrorDescription)
+
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+
+" This will remap the key combination g+h to open the quick docs.
+nnoremap gs :action QuickJavaDoc<cr>
+nnoremap gr :action ShowUsages<CR>
+nnoremap ge :action ShowErrorDescription<cr> "!!
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+nnoremap gb :action CommentByBlockComment<CR>
+nnoremap gc :action CommentByLineComment<CR>
+
+nmap <leader>lj :action GotoNextError<CR>
+nmap <leader>lk :action GotoPreviousError<CR>
+nmap <leader>lr :action RenameElement<CR>
+nmap <leader>lf :action ReformatCode<CR>
+nmap <leader>la :action ShowIntentionActions<CR>
+
+nmap <leader>b <Action>(BuildSolutionAction)
+nmap <leader>h <Action>(QuickImplementations)
+
+
+nmap <leader>rr :action Run<CR>
+nmap <leader>rt :action RiderUnitTestRunSolutionAction<CR>
+nmap <leader>rq :action Stop<CR>
+nmap <leader>rd :action Debug<CR>
+
+"" Map \b to toggle the breakpoint on the current line
+nmap <leader>dr :action Debug<CR>
+nmap <leader>dq :action Stop<CR>
+nmap <leader>dt :action ToggleLineBreakpoint<CR>
+nmap <leader>do :action StepOver<CR>
+nmap <leader>di :action StepInto<CR> 
+nmap <leader>du :action StepOut<CR>
+nmap <leader>dc :action Resume<CR>
+nmap <leader>dv <Action>(ViewBreakpoints)
+
+let g:WhichKeyDesc_run = "<Space>r  Run"
+let g:WhichKeyDesc_go   = "g  Go"
+let g:WhichKeyDesc_debug  = "d  Debug"
+let g:WhichKeyDesc_code  = "<leader>l  Code"

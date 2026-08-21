@@ -1,0 +1,12 @@
+[metadata]
+name = "images"
+description = "A channel to select from Podman images"
+requirements = [ "podman", "jq",]
+
+[source]
+command = "podman images --format '{{.Repository}}:{{.Tag}} {{.ID}}'"
+output = "{split: :-1}"
+
+[preview]
+command = "podman image inspect '{split: :-1}' | jq -C"
+

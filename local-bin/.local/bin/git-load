@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+last_commit=$(git log -1 --pretty=%B)
+
+echo "Reverting to the last known good state at: '$last_commit'"
+
+git reset --hard > /dev/null 2>&1
+git clean -fd > /dev/null 2>&1
