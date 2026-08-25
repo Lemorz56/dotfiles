@@ -1,18 +1,9 @@
 [user]
 	name = Sebastian Mossberg
-	email = sebastian.mossberg@epiroc.com
+	email = sebastian@msbrg.net
 [credential]
-	#useHttpPath = true
-    ; helper = /mnt/c/Users/tmgsemo/AppData/Local/Programs/Git/mingw64/libexec/git-core/git-credential-manager-core.exe
-    ;helper = manager
-	; credentialStore = gpg
-	helper = osxkeychain
-	azreposCredentialType = oauth
-	gitHubAccountFiltering = false
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
-	; helper = 
-    #helper = '/mnt/c/git/git-credential-manager.exe'
+	;helper = osxkeychain
+	;helper = /usr/local/share/gcm-core/git-credential-manager
 
 [pull]
 	rebase = true
@@ -49,8 +40,6 @@
     dlog = -c diff.external=difft log --ext-diff
     dshow = -c diff.external=difft show --ext-diff
     ddiff = -c diff.external=difft diff
-[safe]
-	directory = /home/tmgsemo/code/azure-storage-fuse
 [core]
     editor = nvim
     ignorecase = false
@@ -115,11 +104,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[credential "azrepos:org/epiroc-it"]
-	azureAuthority = https://login.microsoftonline.com/896ecbea-bd27-4a3c-a131-34aa0b46a086
-	username = sebastian.mossberg@epiroc.com
-[credential "azrepos:org/EPIROC-AUTOMATION"]
-	username = sebastian.mossberg@epiroc.com
-	azureAuthority = https://login.microsoftonline.com/896ecbea-bd27-4a3c-a131-34aa0b46a086
-[credential "https://dev.azure.com"]
-	useHttpPath = true

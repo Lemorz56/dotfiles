@@ -10,7 +10,6 @@ fi
 
 #NOTE: Envs
 #export ZSH="$HOME/.oh-my-zsh"
-#export PATH="$PATH:/home/tmgsemo/go/bin/"
 #export PATH="$PATH:/usr/local/go/bin"
 #export PATH="$PATH:$HOME/.dotnet"
 #export PATH="$PATH:$HOME/.dotnet/tools"
@@ -38,9 +37,6 @@ export HOMEBREW_BUNDLE_NO_VSCODE=1
 export PANERU_CONFIG=~/.config/paneru/paneru.toml
 
 export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:/Users/sebastian.mossberg/.local/bin
-export PATH="$PATH:/Users/sebastian.mossberg/.dotnet/tools"
-export PATH=$PATH:/Users/sebastian.mossberg/.config/emacs/bin/
 
 
 alias bash='/opt/homebrew/opt/bash/bin/bash'
@@ -50,7 +46,6 @@ alias bash='/opt/homebrew/opt/bash/bin/bash'
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git kubectl kube-ps1 kubectx zsh-autosuggestions poetry web-search nats golang terraform fast-syntax-highlighting)
-source /Users/sebastian.mossberg/.oh-my-zsh/oh-my-zsh.sh
 #source ~/kube-ps1/kube-ps1.sh
 source $ZSH/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 KUBE_PS1_SYMBOL_USE_IMG=true
@@ -59,7 +54,6 @@ KUBE_PS1_SYMBOL_ENABLE=false
 #NOTE: Completion
 #source <(kubectl completion zsh)
 #source <(kind completion zsh)
-#source /home/tmgsemo/zsh-git-prompt/zshrc.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 
 autoload -Uz vcs_info
@@ -85,11 +79,9 @@ alias gst='git status'
 alias gdelta='git diff | delta'
 #alias k='kubectl'
 alias python='python3'
-#alias code='/mnt/c/Users/tmgsemo/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code'
 alias lg="lazygit"
 alias kks="k9s"
 alias pip=pip3
-#alias hmr="home-manager switch --flake ~/nix-home/#tmgsemo"
 #alias ls="eza --icons"
 alias ls="eza --long --all --git --icons=auto"
 alias llm="eza -l --sort=modified -all --git --icons=auto"
@@ -161,19 +153,6 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# pnpm
-# export PNPM_HOME="/home/tmgsemo/.local/share/pnpm"
-export PNPM_HOME="/Users/sebastian.mossberg/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# export DOCKER_COMMAND=podman
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # Created by `pipx` on 2025-07-24 09:10:23
