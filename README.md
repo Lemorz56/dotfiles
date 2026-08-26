@@ -3,10 +3,6 @@
 Personal config/dotfiles (nvim, zsh, tmux, git, and assorted macOS app
 configs). Neovim setup is based on [LazyVim](https://www.lazyvim.org/).
 
-## Look and feel
-
-![Rust](rust.png)
-
 ## Layout
 
 Managed with [GNU Stow](https://www.gnu.org/software/stow/) — one
